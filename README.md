@@ -15,6 +15,6 @@ python Trainer.py Configs/TrainConfig_file
 ```
 The training model is saved as text file, and the program will automatically store the related plots (e.g., MVA distribution, ROC curve, and variable importance).
 
-## To-do list
+### To-do list
 - [X] Main training code.
 - [ ] Upload the code for predicting the BDT score.
