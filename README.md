@@ -11,6 +11,7 @@ First, set up the training configuration in `Configs\TrainConfig*.py`, including
 Then, you can run the project directly with the following command:
 
 ```bash
+cd XGBoost
 python Trainer.py Configs/TrainConfig_file
 ```
 The training model is saved as text file, and the program will automatically store the related plots (e.g., MVA distribution, ROC curve, and variable importance).
