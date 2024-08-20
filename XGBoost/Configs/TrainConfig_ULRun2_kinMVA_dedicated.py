@@ -5,7 +5,7 @@
 #=============================================# 
 import numpy as np
 
-OutputDirName = "kinMVA_XGB_ULRun2_dedi_test" #All plots, models, config file will be stored here
+OutputDirName = "kinMVA_XGB_ULRun2_dedi" #All plots, models, config file will be stored here
 Tree, channel = "TH", "combine"
 Debug, MVAlogplot = False, False
 testsize, RandomState = 0.5, 123

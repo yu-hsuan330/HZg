@@ -9,7 +9,7 @@ OutputDirName = "VBFMVA_XGB_ULRun2_dedi" #All plots, models, config file will be
 Tree, channel = "TH", "combine"
 Debug, MVAlogplot = False, True
 testsize, RandomState = 0.5, 123
-branches = ["costheta", "cosTheta", "Phi", "mllgptdmllg", "phores", "dR_lg", "maxdR_lg", "phoCalIDMVA1", "lepEta1", "lepEta2", "phoEta1", "totwei", "totSF", "ptwei",
+branches = ["costheta", "cosTheta", "Phi", "mllgptdmllg", "phores", "dR_lg", "maxdR_lg", "phoCalIDMVA1", "lepEta1", "lepEta2", "phoEta1", "totwei", "totSF",
             "absdPhi_Zgjj", "dR_phojet", "absdEta_jj", "absdPhi_jj", "VBFPt1", "VBFPt2", "absZeppen_pho", "abssysbal", "ZgPTt",
             "refit_mllgErr", "phoSCEta1"]
 features = ["costheta", "cosTheta", "Phi", "mllgptdmllg", "phores", "dR_lg", "maxdR_lg", "phoCalIDMVA1", "lepEta1", "lepEta2", "phoEta1",
@@ -23,15 +23,15 @@ processes = [
     {
     "Class":"Signal",
     "path":["../VBFmatch/minitrees_dedicated/UL*_VBF_125GeV_VBFmatch.root"],
-    "selection":"((refit_mllg < 170 && refit_mllg > 105) && (VBFtag == 1 && Leptag == 0) && event%2 == 0)",
+    "selection":"(refit_mllg < 170) & (refit_mllg > 105) & (VBFtag == 1) & (Leptag == 0) & (event%2 == 0)",
     "weight": ("totwei", "totSF"),
     },
     {
     "Class":"Background",
-    "path":["../../minitrees_dedicated/UL*_DYJetsToLL.root",
-            "../../minitrees_dedicated/UL*_SMZg.root",
-            "../../minitrees_dedicated/UL*_ggF_125GeV.root"],
-    "selection":"((refit_mllg < 170 && refit_mllg > 105) && (VBFtag == 1 && Leptag == 0))", 
+    "path":["../minitrees_dedicated/UL*_DYJetsToLL.root",
+            "../minitrees_dedicated/UL*_SMZg.root",
+            "../minitrees_dedicated/UL*_ggF_125GeV.root"],
+    "selection":"(refit_mllg < 170) & (refit_mllg > 105) & (VBFtag == 1) & (Leptag == 0)", 
     "weight": ("totwei", "totSF"), 
     },
 ]
